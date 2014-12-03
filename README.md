@@ -40,9 +40,9 @@ Scroll through over 400KB at one line per byte, there's a surprise at the end:
 
 Just a taste of the fun:
 
-    python -c "import segfault; segfault.segfault('lol')" | head; \
+    head <(python -c "import segfault; segfault.segfault('lol')"); \
     echo "..."; \
-    echo "$(python -c "import segfault; segfault.segfault('lol')"; exit="$(echo $?)"; echo; man 7 signal | grep $(($exit-128));)" | tail
+    tail <(python -c "import segfault; segfault.segfault('lol')"; exit="$?"; echo; man 7 signal | grep $(($exit-128)))
 
 [1]: https://docs.python.org/2/extending/extending.html
 [2]: https://docs.python.org/2/extending/building.html#building

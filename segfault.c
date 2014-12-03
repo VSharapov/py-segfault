@@ -48,9 +48,13 @@ char* verboseChar(char c){
 		"[US  ] unit separator",
 		"[SP  ] space "
 	};
+
+	// Why is this line necessary? Who knows... try removing it - normal printables and 8 bit hex representations won't print
+	snprintf(buf, sizeof(buf), "%04d ", c & 0xff);
+
 	if ((unsigned int)c <= 32){return sp[(unsigned int)c];}
 	if ((unsigned int)c == 127){return "[DEL ]";}
-	if ((unsigned int)c < 127){buf[2] = c; return buf;}
+	if ((unsigned int)c < 127){snprintf(buf, sizeof(buf), "%s%c%s", "[  ", c, " ]"); return buf;}
 	snprintf(buf, sizeof(buf), "%s%x%s", "[0x", c & 0xff, "]");
 	return buf;
 }
