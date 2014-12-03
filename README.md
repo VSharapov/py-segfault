@@ -7,6 +7,8 @@ C can do lots of stuff that python can't, mainly it's pretty fast, which is nice
 
 Of course speed isn't all that C offers, you can do other amazing things, like access whatever memory you want. Damn the torpedoes!
 
+So next time some snobby systems developer points to a segfault and asks "[Can your python do this?!][3]" show them what's up.
+
 Installation
 ------------
 
@@ -44,3 +46,4 @@ Just a taste of the fun:
 
 [1]: https://docs.python.org/2/extending/extending.html
 [2]: https://docs.python.org/2/extending/building.html#building
+[3]: https://www.google.com/search?q=can+your+mac+do+this&tbm=isch
